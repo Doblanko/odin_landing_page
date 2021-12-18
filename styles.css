@@ -1,0 +1,41 @@
+/* * {
+    border: 2px solid red;
+} */
+
+/* -----Top Section Styles-----*/
+
+.top-primary-container {
+    background-color: #1F2937;
+    color: #f9faf8;
+    padding:  10px 5px 10px 5px;
+    height: 525px;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.header-logo {
+    font-size: 24px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    align-items: left;
+}
+
+
+.top-links-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.top-links-option {
+    display: inline-block;
+    font-size: 18px;
+    color: #E5E7EB;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 8px;
+}
