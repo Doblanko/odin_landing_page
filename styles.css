@@ -1,35 +1,41 @@
-/* * {
+ /* * {
     border: 2px solid red;
 } */
 
 /* -----Top Section Styles-----*/
 
 .top-primary-container {
+    display: flex;
+    flex-direction: column;
     background-color: #1F2937;
     color: #f9faf8;
     padding:  10px 5px 10px 5px;
-    height: 525px;
+    height: 450px;
 }
+
+
 
 .header-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding-left: 100px;
+    padding-right: 100px;
 }
 
 .header-logo {
     font-size: 24px;
     font-weight: 700;
     font-family: Arial, Helvetica, sans-serif;
-    align-items: left;
+    
 }
-
 
 .top-links-container {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    gap: 10px;
 }
 
 .top-links-option {
@@ -37,5 +43,58 @@
     font-size: 18px;
     color: #E5E7EB;
     font-family: Arial, Helvetica, sans-serif;
-    padding: 8px;
+}
+
+
+
+.awesome-website-container {  /* Contains the header on left and photo on right */
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 40px;
+    gap: 10px;
+}
+
+.left-website-about, .right-placeholder-image {
+    width: 400px;
+}
+
+.right-placeholder-image {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.left-website-about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.top-image {
+    width: 400px;
+    height: auto;
+}
+
+.main-header {
+    font-size: 48px;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+.about-text {
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+.top-button {
+    background-color: #3882F6;
+    color: #F9FAF8;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    border-style: none;
+    border-radius: 10px;
+    width: 100px;
+    height: 30px;
 }
