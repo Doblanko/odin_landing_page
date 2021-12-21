@@ -15,8 +15,6 @@ function computerPlay() {
     };
 }
 
-
-
 function game() {
     let score = [0, 0];
     let computerSelection = '';
