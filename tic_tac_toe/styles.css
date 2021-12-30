@@ -1,0 +1,60 @@
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h1 {
+    font-size: 80px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: rgb(32, 15, 65);
+}
+
+#gameboard-container {
+    display: grid;
+    grid-template-rows: repeat(3, 168px);
+    grid-template-columns: repeat(3, 168px);
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+#winner {
+    align-items: center;
+    border: black solid 5px;
+    border-radius: 10px;
+    height: 60px;
+    width: 500px;
+    margin-top: 10px;
+
+    font-size: 40px;
+    font-weight: bold;
+    color: rgb(32, 15, 65);
+    background-color: rgb(245, 236, 202);
+}
+
+#resetBtn {
+    outline-style: none;
+    height: 60px;
+    width: 200px;
+    border: solid 5px;
+    border-radius: 10px;
+    margin-top: 10px;
+
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(32, 15, 65);
+    background-color: rgb(245, 236, 202);
+}
