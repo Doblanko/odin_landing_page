@@ -36,8 +36,9 @@ const Gameboard = (() => {
 
     }
 
-    const checkIfAvail = (row, col) => {
+    const checkIfAvail = (row, col, symbol) => {
         if (gameArr[row][col] == 0) {
+            gameArr[row][col] = symbol
             return true
         } else {
             return false
@@ -65,15 +66,13 @@ const gameController = (() => {
         game.player1 = player1
         game.player2 = player2
         game.currentPlayer = game.player1
-        console.log(game.player1.getSymbol())
-        console.log(game.player2.getSymbol())
     }
 
     const makePlay = (boxID) => {
         // compute the location from the box ID
         row = Math.floor((boxID - 1) / 3)
         col = ((boxID - 1) % 3)
-        if (Gameboard.checkIfAvail(row, col)) {
+        if (Gameboard.checkIfAvail(row, col, game.currentPlayer.getSymbol())) {
             displayController.render(boxID, game.currentPlayer.getSymbol())
             changeTurns()
         }
