@@ -73,9 +73,16 @@ const Gameboard = (() => {
         return false
     }
 
+    const resetGame = () => {
+        gameArr = 
+            [[0, 0, 0],
+             [0, 0, 0],
+             [0, 0, 0]]
+    }
+
     
 
-    return {checkWinner, checkIfAvail}
+    return {checkWinner, checkIfAvail, resetGame}
 })()
 
 // Module to control the flow of the game
@@ -110,11 +117,17 @@ const gameController = (() => {
                 displayController.winner(game.currentPlayer)
             }
             
-            changeTurns()
+            _changeTurns()
         }
     }
 
-    const changeTurns = () => {
+    const resetGame = () => {
+        displayController.resetGrid()
+        Gameboard.resetGame()
+        game.currentPlayer = game.player1
+    }
+
+    const _changeTurns = () => {
         if (game.currentPlayer == game.player1) {
             game.currentPlayer = game.player2
         } else {
@@ -123,7 +136,7 @@ const gameController = (() => {
         
     }
 
-    return { startGame, makePlay }
+    return { startGame, resetGame, makePlay }
 })()
 
 // Module for display control
@@ -135,12 +148,23 @@ const displayController = (() => {
     }
 
     const resetGrid = () => {
+        // Reset the winning message
+        document.getElementById("winner").textContent = "May the best player win!"
         // Removes all entries in the board
-        document.querySelectorAll(".box").forEach(box => {box.textContent = ""})
+        document.querySelectorAll(".box").forEach(box => { 
+            box.textContent = ""
+            // make the buttons clickable again
+            box.addEventListener('click', boxClick)
+        })
     }
 
     const winner = (currentPlayer) => {
         document.getElementById("winner").textContent = `${currentPlayer.getName()} wins!`
+        
+        // disable being able to make plays
+        document.querySelectorAll(".box").forEach(box => {
+            box.removeEventListener("click", boxClick)
+        })
     }
 
     return { render, resetGrid, winner }
@@ -151,6 +175,9 @@ const gridBoxes = document.querySelectorAll(".box")
 gridBoxes.forEach((box) => {
     box.addEventListener('click', boxClick)
 })
+
+const newGameBtn = document.getElementById("resetBtn")
+newGameBtn.addEventListener('click', gameController.resetGame)
 
 // Listener function
 function boxClick(event) {
