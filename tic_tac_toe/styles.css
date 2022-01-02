@@ -34,14 +34,13 @@ h1 {
 }
 
 #winner {
-    align-items: center;
     border: black solid 5px;
     border-radius: 10px;
     height: 60px;
     width: 500px;
-    margin-top: 10px;
 
     font-size: 40px;
+    line-height: 60px;
     font-weight: bold;
     color: rgb(32, 15, 65);
     background-color: rgb(245, 236, 202);

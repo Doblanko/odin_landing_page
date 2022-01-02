@@ -115,9 +115,9 @@ const gameController = (() => {
             
             if (Gameboard.checkWinner(game.currentPlayer.getSymbol())) {
                 displayController.winner(game.currentPlayer)
-            }
-            
-            _changeTurns()
+            } else {
+                _changeTurns()
+            }   
         }
     }
 
@@ -133,7 +133,7 @@ const gameController = (() => {
         } else {
             game.currentPlayer = game.player1
         }
-        
+        displayController.changeTurns(game.currentPlayer)
     }
 
     return { startGame, resetGame, makePlay }
@@ -167,7 +167,11 @@ const displayController = (() => {
         })
     }
 
-    return { render, resetGrid, winner }
+    const changeTurns = (currentPlayer) => {
+        document.getElementById("winner").textContent = `${currentPlayer.getName()}'s turn!`
+    }
+
+    return { render, resetGrid, winner, changeTurns }
 })()
 
 // Event Listeners
