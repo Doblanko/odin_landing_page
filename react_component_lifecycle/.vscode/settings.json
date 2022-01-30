@@ -1,0 +1,7 @@
+{
+    "editor.formatOnSave": false, // running prettier as an eslint rule, not a formatter
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true,
+    },
+    "javascript.validate.enable": false // disable vscode syntax checking (leave it to linter)
+}
