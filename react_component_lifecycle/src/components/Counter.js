@@ -25,6 +25,7 @@ class Counter extends Component {
   }
 
   static getDerivedStateFromProps(props, state) {
+    console.log('Get Derived State from Props');
     if (props.seed && state.seed !== props.seed) {
       return {
         seed: props.seed,
