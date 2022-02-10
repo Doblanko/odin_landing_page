@@ -5,7 +5,8 @@ const fs = require('fs');
 const serverPort = 8080;
 
 const handleClientRequest = (request, response) => {
-    request.url
+    response.writeHead(200, {'Content-Type': 'text/html'})
+    response.end()
 }
 
 const server = http.createServer(handleClientRequest);
