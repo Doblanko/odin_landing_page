@@ -17,6 +17,7 @@
     "rules": {
         "prefer-destructuring": "off",
         "func-names": "off",
-        "no-underscore-dangle": "off"
+        "no-underscore-dangle": "off",
+        "consistent-return": "off",
     }
 }
