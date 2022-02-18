@@ -29,8 +29,7 @@ AuthorSchema.virtual('lifespan').get(function () {
   let lifetimeString = '';
 
   if (this.date_of_birth) {
-    lifetimeString = DateTime.fromJSDate(this.date_of_birth).year
-    //lifetimeString = this.date_of_birth.getYear().toString();
+    lifetimeString = DateTime.fromJSDate(this.date_of_birth).year;
   }
   lifetimeString += ' - ';
   if (this.date_of_death) {
@@ -39,12 +38,10 @@ AuthorSchema.virtual('lifespan').get(function () {
   return lifetimeString;
 });
 
-
 // Virtual for author's URL
 AuthorSchema.virtual('url').get(function () {
   return `/catalog/author/${this._id}`;
 });
-
 
 // Export model
 module.exports = mongoose.model('Author', AuthorSchema);
